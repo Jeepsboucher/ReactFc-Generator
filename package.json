@@ -1,5 +1,9 @@
 {
   "name": "reactfc-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jeepsboucher/ReactFc-Generator"
+  },
   "displayName": "ReactFC Generator",
   "publisher": "Jeepsboucher",
   "description": "Generate a React.FC component with a css file",
