@@ -9,8 +9,9 @@ function generateReactFC(contextMenuPath: string, functionComponentName: string)
 	const folderPath = path.join(contextMenuPath, functionComponentName);
 	if (!fs.existsSync(folderPath)) {
 		fs.mkdirSync(folderPath);
-		fs.writeFileSync(path.join(folderPath, `${functionComponentName}.tsx`), GenericFile.getGenericTsx(functionComponentName));
-		fs.writeFileSync(path.join(folderPath, `${functionComponentName}.css`), '');
+		const useCssModule = vscode.workspace.getConfiguration('reactfc-generator').get<boolean>('useCssModule');
+		fs.writeFileSync(path.join(folderPath, `${functionComponentName}.tsx`), GenericFile.getGenericTsx(functionComponentName, useCssModule));
+		fs.writeFileSync(path.join(folderPath, `${functionComponentName}${useCssModule ? '.module' : ''}.css`), '');
 	}
 }
 

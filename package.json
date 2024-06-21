@@ -7,7 +7,7 @@
   "displayName": "ReactFC Generator",
   "publisher": "Jeepsboucher",
   "description": "Generate a React.FC component with a css file",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.87.0"
   },
@@ -17,6 +17,16 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "ReactFC Generator Settings",
+      "properties": {
+        "reactfc-generator.useCssModule": {
+          "type": "boolean",
+          "default": false,
+          "description": "Generate a css module file instead of a regular css file"
+        }
+      }
+    },
     "submenus": [
       {
         "id": "reactfc-generator.submenu",
