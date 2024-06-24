@@ -1,7 +1,7 @@
 export class GenericFile {
     public static getGenericTsx(name: string, useCssModule = false): string {
         return `import React from "react";
-import './${name}${useCssModule ? '.module' : ''}.css';
+import${useCssModule ? ' styles from' : ''} './${name}${useCssModule ? '.module' : ''}.css';
 
 interface ContainerProps {
 }
